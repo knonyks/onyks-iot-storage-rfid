@@ -1,0 +1,193 @@
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "d3620cad-99d5-4267-a144-49d6f9957c6b")
+	(paper "A4")
+	(title_block
+		(title "RFID Storage Monitor")
+		(rev "v1.0")
+		(company "KN ONYKS")
+		(comment 1 "Mateusz Budzyński")
+	)
+	(lib_symbols)
+	(wire
+		(pts
+			(xy 140.97 95.25) (xy 146.05 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d9f2b9c9-9b25-4c30-b081-f3115dba24f7")
+	)
+	(wire
+		(pts
+			(xy 140.97 92.71) (xy 146.05 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ef9ab44a-9265-4922-8cff-270ecbc1daa9")
+	)
+	(sheet
+		(at 76.2 88.9)
+		(size 25.4 12.7)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "5e3c0fe1-98fd-4f52-8c1c-619c9e001744")
+		(property "Sheetname" "Power supply"
+			(at 76.2 88.1884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "power_supply.kicad_sch"
+			(at 76.2 102.1846 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "onyks-iot-esp32-storage-rfid"
+				(path "/d3620cad-99d5-4267-a144-49d6f9957c6b"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 146.05 88.9)
+		(size 31.75 12.7)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "de20a575-b588-4674-a6be-01e8d6418ae5")
+		(property "Sheetname" "Peripherials"
+			(at 146.05 88.1884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "peripherials.kicad_sch"
+			(at 146.05 102.1846 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "TXD" output
+			(at 146.05 92.71 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "69f1fa5f-640d-4137-a9c4-866bb0238316")
+		)
+		(pin "RXD" input
+			(at 146.05 95.25 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "7f26322b-1560-4483-9afa-90f0e8f0ef7e")
+		)
+		(instances
+			(project "onyks-iot-esp32-storage-rfid"
+				(path "/d3620cad-99d5-4267-a144-49d6f9957c6b"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 109.22 88.9)
+		(size 31.75 12.7)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "fb01407f-0cb9-48bd-b681-62d66d25ca02")
+		(property "Sheetname" "ESP32"
+			(at 109.22 88.1884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "esp.kicad_sch"
+			(at 109.22 102.1846 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "TXD" output
+			(at 140.97 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "712c2dbb-d591-4af9-9cc1-7fc0340d410c")
+		)
+		(pin "RXD" input
+			(at 140.97 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "c6816332-ea97-4b70-bc69-85e077c82ccc")
+		)
+		(instances
+			(project "onyks-iot-esp32-storage-rfid"
+				(path "/d3620cad-99d5-4267-a144-49d6f9957c6b"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+)
