@@ -1,7 +1,7 @@
 (kicad_sch
-	(version 20231120)
+	(version 20250114)
 	(generator "eeschema")
-	(generator_version "8.0")
+	(generator_version "9.0")
 	(uuid "d3620cad-99d5-4267-a144-49d6f9957c6b")
 	(paper "A4")
 	(title_block
@@ -34,6 +34,10 @@
 	(sheet
 		(at 76.2 88.9)
 		(size 25.4 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -72,6 +76,10 @@
 	(sheet
 		(at 146.05 88.9)
 		(size 31.75 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -101,23 +109,23 @@
 		)
 		(pin "TXD" output
 			(at 146.05 92.71 180)
+			(uuid "69f1fa5f-640d-4137-a9c4-866bb0238316")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "69f1fa5f-640d-4137-a9c4-866bb0238316")
 		)
 		(pin "RXD" input
 			(at 146.05 95.25 180)
+			(uuid "7f26322b-1560-4483-9afa-90f0e8f0ef7e")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "7f26322b-1560-4483-9afa-90f0e8f0ef7e")
 		)
 		(instances
 			(project "onyks-iot-esp32-storage-rfid"
@@ -130,6 +138,10 @@
 	(sheet
 		(at 109.22 88.9)
 		(size 31.75 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -159,23 +171,23 @@
 		)
 		(pin "TXD" output
 			(at 140.97 95.25 0)
+			(uuid "712c2dbb-d591-4af9-9cc1-7fc0340d410c")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "712c2dbb-d591-4af9-9cc1-7fc0340d410c")
 		)
 		(pin "RXD" input
 			(at 140.97 92.71 0)
+			(uuid "c6816332-ea97-4b70-bc69-85e077c82ccc")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "c6816332-ea97-4b70-bc69-85e077c82ccc")
 		)
 		(instances
 			(project "onyks-iot-esp32-storage-rfid"
@@ -190,4 +202,5 @@
 			(page "1")
 		)
 	)
+	(embedded_fonts no)
 )
