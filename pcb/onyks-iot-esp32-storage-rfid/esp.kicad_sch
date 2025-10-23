@@ -2905,6 +2905,10 @@
 		(uuid "2fce2ee2-ce2f-4d68-bf2f-d5fb9be410f7")
 	)
 	(no_connect
+		(at 135.89 64.77)
+		(uuid "448c43ca-d27f-46be-980c-9d6f051334c7")
+	)
+	(no_connect
 		(at 135.89 46.99)
 		(uuid "5976c682-20d1-46c4-a799-0096349343ce")
 	)
