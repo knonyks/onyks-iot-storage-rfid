@@ -312,6 +312,143 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Regulator_Linear:AMS1117-3.3"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at -3.81 3.175 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "AMS1117-3.3"
+				(at 0 3.175 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Package_TO_SOT_SMD:SOT-223-3_TabPin2"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "http://www.advanced-monolithic.com/pdf/ds1117.pdf"
+				(at 2.54 -6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "1A Low Dropout regulator, positive, 3.3V fixed output, SOT-223"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "linear regulator ldo fixed positive"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "SOT?223*TabPin2*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "AMS1117-3.3_0_1"
+				(rectangle
+					(start -5.08 -5.08)
+					(end 5.08 1.905)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "AMS1117-3.3_1_1"
+				(pin power_in line
+					(at -7.62 0 0)
+					(length 2.54)
+					(name "VI"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 -7.62 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name "VO"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Regulator_Linear:TLV75733PDBV"
 			(pin_names
 				(offset 0.254)
@@ -844,8 +981,8 @@
 	)
 	(text_box "Power Supply : VCC = 5V"
 		(exclude_from_sim no)
-		(at 76.2 53.34 0)
-		(size 88.9 35.56)
+		(at 73.66 53.34 0)
+		(size 157.48 39.37)
 		(margins 0.9525 0.9525 0.9525 0.9525)
 		(stroke
 			(width 0)
@@ -867,6 +1004,18 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "38d63069-1651-44fb-a99a-b690affe68f0")
+	)
+	(junction
+		(at 182.88 69.85)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "52f2503a-c1e8-4302-8460-1089551a69c4")
+	)
+	(junction
+		(at 208.28 69.85)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "92a0176d-0b5c-424b-a768-ffac7bab7352")
 	)
 	(junction
 		(at 120.65 69.85)
@@ -902,6 +1051,16 @@
 	)
 	(wire
 		(pts
+			(xy 182.88 69.85) (xy 182.88 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2b46b99b-53ec-4dd9-b7e0-60c5091e2e23")
+	)
+	(wire
+		(pts
 			(xy 120.65 69.85) (xy 124.46 69.85)
 		)
 		(stroke
@@ -912,6 +1071,16 @@
 	)
 	(wire
 		(pts
+			(xy 182.88 66.04) (xy 182.88 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "38af230f-98b4-4488-b4d8-860e8277a23a")
+	)
+	(wire
+		(pts
 			(xy 146.05 78.74) (xy 146.05 81.28)
 		)
 		(stroke
@@ -919,6 +1088,16 @@
 			(type default)
 		)
 		(uuid "565c9a94-eb94-4503-b939-f1c83188969f")
+	)
+	(wire
+		(pts
+			(xy 195.58 77.47) (xy 195.58 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5682256f-b759-43c5-8e1c-324de8aa7df5")
 	)
 	(wire
 		(pts
@@ -962,6 +1141,16 @@
 	)
 	(wire
 		(pts
+			(xy 203.2 69.85) (xy 208.28 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8a15932f-099d-4678-be0f-59d37f152a3f")
+	)
+	(wire
+		(pts
 			(xy 124.46 72.39) (xy 124.46 69.85)
 		)
 		(stroke
@@ -969,6 +1158,16 @@
 			(type default)
 		)
 		(uuid "8d1b1240-67c1-47ea-989d-7070144109e7")
+	)
+	(wire
+		(pts
+			(xy 182.88 78.74) (xy 182.88 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "93f8cb71-3b30-4216-af3a-aaa4d998446a")
 	)
 	(wire
 		(pts
@@ -982,6 +1181,16 @@
 	)
 	(wire
 		(pts
+			(xy 208.28 68.58) (xy 208.28 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a1a26c80-cc4f-4f90-be70-34ebedae122e")
+	)
+	(wire
+		(pts
 			(xy 146.05 69.85) (xy 146.05 68.58)
 		)
 		(stroke
@@ -992,6 +1201,16 @@
 	)
 	(wire
 		(pts
+			(xy 182.88 69.85) (xy 187.96 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d631b6b1-4e92-4c3e-8f41-086bf64f636f")
+	)
+	(wire
+		(pts
 			(xy 91.44 71.12) (xy 95.25 71.12)
 		)
 		(stroke
@@ -999,6 +1218,26 @@
 			(type default)
 		)
 		(uuid "dc7f6647-274c-4db8-9308-268afd63ea01")
+	)
+	(wire
+		(pts
+			(xy 208.28 69.85) (xy 208.28 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "df8ec936-c6ce-4bd0-b112-136269b11724")
+	)
+	(wire
+		(pts
+			(xy 208.28 78.74) (xy 208.28 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e05ca56b-71e8-411f-8ee7-6fd7e7259e05")
 	)
 	(wire
 		(pts
@@ -1173,6 +1412,77 @@
 		)
 	)
 	(symbol
+		(lib_id "Regulator_Linear:AMS1117-3.3")
+		(at 195.58 69.85 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "08353a93-c77e-41f3-8605-c5b2cfa4f6b9")
+		(property "Reference" "U3"
+			(at 195.58 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "AMS1117-3.3"
+			(at 195.58 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-223-3_TabPin2"
+			(at 195.58 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.advanced-monolithic.com/pdf/ds1117.pdf"
+			(at 198.12 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "1A Low Dropout regulator, positive, 3.3V fixed output, SOT-223"
+			(at 195.58 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3fbb1547-e380-46b1-bb06-5bf9afee74d4")
+		)
+		(pin "3"
+			(uuid "c41f9e29-3c55-46b5-af16-7294613c440a")
+		)
+		(pin "2"
+			(uuid "1fd21a3b-b917-4c7e-a4ff-376d1a86f3f3")
+		)
+		(instances
+			(project ""
+				(path "/d3620cad-99d5-4267-a144-49d6f9957c6b/5e3c0fe1-98fd-4f52-8c1c-619c9e001744"
+					(reference "U3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+3.3V")
 		(at 146.05 68.58 0)
 		(unit 1)
@@ -1304,6 +1614,340 @@
 			(project "onyks-iot-esp32-storage-rfid"
 				(path "/d3620cad-99d5-4267-a144-49d6f9957c6b/5e3c0fe1-98fd-4f52-8c1c-619c9e001744"
 					(reference "C4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 182.88 81.28 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "444742cc-4367-4fe0-8cb2-8605d9f550ca")
+		(property "Reference" "#PWR027"
+			(at 182.88 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 182.88 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 182.88 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 182.88 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 182.88 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a5f4ab5e-1cf8-4b43-980c-1a8e16227918")
+		)
+		(instances
+			(project "onyks-iot-esp32-storage-rfid"
+				(path "/d3620cad-99d5-4267-a144-49d6f9957c6b/5e3c0fe1-98fd-4f52-8c1c-619c9e001744"
+					(reference "#PWR027")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VCC")
+		(at 182.88 66.04 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "46a02e6a-223b-4a76-b184-9a03d565997d")
+		(property "Reference" "#PWR026"
+			(at 182.88 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "VCC"
+			(at 182.88 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 182.88 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 182.88 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VCC\""
+			(at 182.88 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "658a66b2-994c-4aaa-b4a3-f57b22c2e6df")
+		)
+		(instances
+			(project "onyks-iot-esp32-storage-rfid"
+				(path "/d3620cad-99d5-4267-a144-49d6f9957c6b/5e3c0fe1-98fd-4f52-8c1c-619c9e001744"
+					(reference "#PWR026")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 208.28 81.28 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6cdd77c8-367f-4d21-8c8a-75a9385b3db7")
+		(property "Reference" "#PWR029"
+			(at 208.28 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 208.28 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 208.28 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 208.28 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 208.28 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8bfd81ea-1ece-42d5-ba3c-9239c92027dc")
+		)
+		(instances
+			(project "onyks-iot-esp32-storage-rfid"
+				(path "/d3620cad-99d5-4267-a144-49d6f9957c6b/5e3c0fe1-98fd-4f52-8c1c-619c9e001744"
+					(reference "#PWR029")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3.3V")
+		(at 208.28 68.58 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9769f7a6-53bf-4845-b99a-1226b034f390")
+		(property "Reference" "#PWR028"
+			(at 208.28 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "VDD33"
+			(at 208.28 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 208.28 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 208.28 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 208.28 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "48c6239a-b323-4968-943a-204f4727af64")
+		)
+		(instances
+			(project "onyks-iot-esp32-storage-rfid"
+				(path "/d3620cad-99d5-4267-a144-49d6f9957c6b/5e3c0fe1-98fd-4f52-8c1c-619c9e001744"
+					(reference "#PWR028")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 208.28 74.93 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9d4062af-51f0-4c34-82ab-1ae83bc2cf13")
+		(property "Reference" "C9"
+			(at 212.09 73.6599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "22uF/10VDC"
+			(at 212.09 76.1999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+			(at 209.2452 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 208.28 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 208.28 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a7bb425c-f417-4348-a3cd-7c7ec0ba2ae9")
+		)
+		(pin "2"
+			(uuid "27c77410-62db-43e3-9a10-ddcdfe8bbc09")
+		)
+		(instances
+			(project "onyks-iot-esp32-storage-rfid"
+				(path "/d3620cad-99d5-4267-a144-49d6f9957c6b/5e3c0fe1-98fd-4f52-8c1c-619c9e001744"
+					(reference "C9")
 					(unit 1)
 				)
 			)
@@ -1588,6 +2232,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 195.58 78.74 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ca8f6666-66e7-43cb-b69d-82774af9b13b")
+		(property "Reference" "#PWR025"
+			(at 195.58 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 195.58 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 195.58 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 195.58 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 195.58 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f5e51691-ca00-455b-bcbc-1e8a762201d9")
+		)
+		(instances
+			(project "onyks-iot-esp32-storage-rfid"
+				(path "/d3620cad-99d5-4267-a144-49d6f9957c6b/5e3c0fe1-98fd-4f52-8c1c-619c9e001744"
+					(reference "#PWR025")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:VCC")
 		(at 120.65 66.04 0)
 		(unit 1)
@@ -1714,6 +2424,77 @@
 			(project "onyks-iot-esp32-storage-rfid"
 				(path "/d3620cad-99d5-4267-a144-49d6f9957c6b/5e3c0fe1-98fd-4f52-8c1c-619c9e001744"
 					(reference "#PWR11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 182.88 74.93 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f9f18576-0761-4918-b021-cee8e4145c71")
+		(property "Reference" "C6"
+			(at 179.07 73.6599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "22uF/10VDC"
+			(at 179.07 76.1999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+			(at 181.9148 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 182.88 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 182.88 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b3d695d2-673e-4cfb-ba8f-0459759de340")
+		)
+		(pin "2"
+			(uuid "5de1d50d-f04f-45d5-b781-8f2a27e38004")
+		)
+		(instances
+			(project "onyks-iot-esp32-storage-rfid"
+				(path "/d3620cad-99d5-4267-a144-49d6f9957c6b/5e3c0fe1-98fd-4f52-8c1c-619c9e001744"
+					(reference "C6")
 					(unit 1)
 				)
 			)
