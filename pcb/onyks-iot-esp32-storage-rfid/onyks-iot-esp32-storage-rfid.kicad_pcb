@@ -8563,6 +8563,14 @@
 		(uuid "86bdc8a8-c0e3-45c3-9d5a-120703cbf1b2")
 	)
 	(segment
+		(start 134.7 99.6)
+		(end 141 99.6)
+		(width 0.4)
+		(layer "F.Cu")
+		(net 3)
+		(uuid "98a31522-336f-4ce8-a29b-d964c073ad4f")
+	)
+	(segment
 		(start 163.2 94.2)
 		(end 160.2 94.2)
 		(width 0.4)
@@ -9294,7 +9302,7 @@
 		(min_thickness 0.25)
 		(filled_areas_thickness no)
 		(keepout
-			(tracks not_allowed)
+			(tracks allowed)
 			(vias not_allowed)
 			(pads allowed)
 			(copperpour not_allowed)
