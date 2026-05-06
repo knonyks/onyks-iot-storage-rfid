@@ -1,14 +1,37 @@
-// #include <Arduino.h>
-// #include "R200.h"
+#include "R200.hpp"
 
-// // Constructor
-// R200::R200() {};
+void R200::init() {
+    uart_config_t uart_config {
+        .baud_rate = R200_BAUDRATE,
+        .data_bits = UART_DATA_8_BITS,
+        .parity = UART_PARITY_DISABLE,
+        .stop_bits = UART_STOP_BITS_1,
+        .flow_ctrl = UART_HW_FLOWCTRL_DISABLE,
+        .source_clk = UART_SCLK_DEFAULT
+    };
 
-// bool R200::begin(HardwareSerial *serial, int baud, uint8_t RxPin, uint8_t TxPin){
-//   _serial = serial;
-//   _serial->begin(baud, SERIAL_8N1, RxPin, TxPin);
-//   return true;
-// };
+    ESP_ERROR_CHECK(uart_param_config(R200_UART, &uart_config));
+
+    ESP_ERROR_CHECK(
+        uart_set_pin(
+            R200_UART, 
+            R200_TX_PIN, 
+            R200_RX_PIN, 
+            UART_PIN_NO_CHANGE, 
+            UART_PIN_NO_CHANGE
+        )
+    );
+
+    ESP_ERROR_CHECK(
+        uart_driver_install(
+                R200_UART, 
+                R200_RX_BUFF_SIZE, 
+                R200_TX_BUFF_SIZE, 
+                R200_EVENT_QUEUE_SIZE, 
+                &_uart_queue, 0
+        )
+    );
+}
 
 // void printHexByte(char* name, uint8_t value){
 //   Serial.print(name);
