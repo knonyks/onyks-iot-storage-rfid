@@ -1,12 +1,13 @@
 #pragma once
 #include "config.hpp"
 
-#include "driver/uart.h"
+#include "uart.hpp"
 
 class R200 {
     private:
-        QueueHandle_t _uart_queue;
+        UART uart;
 
+        
         // const uint8_t blankUid[12];
         // uint8_t _buffer[RX_BUFFER_LENGTH];
 
@@ -20,10 +21,10 @@ class R200 {
     public:
         std::vector<uint8_t> tags;
         
-        R200() : tags{} {};
+        R200() : uart{R200_BAUD}, tags{} {};
 
         void init();
-
+        void send_command(const uint8_t command, const std::vector<uint8_t>& params);
         
 
         // void loop();
@@ -58,10 +59,6 @@ class R200 {
         ParamLengthMSBPos = 0x03,
         ParamLengthLSBPos = 0x04,
         ParamPos = 0x05
-        // Offset of other response elements - parameters, checksum, and frame end - are variable
-        // R200_ParamPos = if(R200_ParamLengthMSBPos << 8 + R200_ParamLengthLSBPos) > 0) { 0x05 } else { null }
-        // R200_ChecksumPos = 0x05 + (R200_ParamLengthMSBPos << 8 + R200_ParamLengthLSBPos)
-        // R200_EndPos = 0x06 + (R200_ParamLengthMSBPos << 8 + R200_ParamLengthLSBPos)
     };
 
     enum R200_FrameControl : uint8_t {

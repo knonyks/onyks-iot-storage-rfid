@@ -17,6 +17,7 @@ void WS2812B::init() {
     };
 
     ESP_ERROR_CHECK(led_strip_new_rmt_device(&strip_config, &rmt_config, &_led));
+    ESP_LOGI(TAG_LED, "LED initialized on pin %d", LED_PIN);
 }
 
 void WS2812B::set_colour(uint8_t r, uint8_t g, uint8_t b) {

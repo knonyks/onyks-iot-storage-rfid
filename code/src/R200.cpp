@@ -1,36 +1,38 @@
 #include "R200.hpp"
 
 void R200::init() {
-    uart_config_t uart_config {
-        .baud_rate = R200_BAUDRATE,
-        .data_bits = UART_DATA_8_BITS,
-        .parity = UART_PARITY_DISABLE,
-        .stop_bits = UART_STOP_BITS_1,
-        .flow_ctrl = UART_HW_FLOWCTRL_DISABLE,
-        .source_clk = UART_SCLK_DEFAULT
-    };
-
-    ESP_ERROR_CHECK(uart_param_config(R200_UART, &uart_config));
-
-    ESP_ERROR_CHECK(
-        uart_set_pin(
-            R200_UART, 
-            R200_TX_PIN, 
-            R200_RX_PIN, 
-            UART_PIN_NO_CHANGE, 
-            UART_PIN_NO_CHANGE
-        )
+    uart.init(
+        R200_UART, 
+        R200_TX_PIN, 
+        R200_RX_PIN, 
+        R200_RX_BUFF_SIZE, 
+        R200_TX_BUFF_SIZE, 
+        R200_EVENT_QUEUE_SIZE
     );
 
-    ESP_ERROR_CHECK(
-        uart_driver_install(
-                R200_UART, 
-                R200_RX_BUFF_SIZE, 
-                R200_TX_BUFF_SIZE, 
-                R200_EVENT_QUEUE_SIZE, 
-                &_uart_queue, 0
-        )
-    );
+    ESP_LOGI(TAG_R200, "R200 initialized on UART%d", R200_UART);
+}
+
+void R200::send_command(const uint8_t command, const std::vector<uint8_t>& params) {
+    uint16_t paramsCount = params.size();
+    uint8_t frame[5 + paramsCount + 2] = {}; // Header, Type, Command, ParamLen(2), Params, Checksum, End
+    frame[R200_FrameStructure::HeaderPos] = R200_FrameControl::Header;
+    frame[R200_FrameStructure::TypePos] = R200_FrameType::Command;
+    frame[R200_FrameStructure::CommandPos] = command;
+    frame[R200_FrameStructure::ParamLengthMSBPos] = (paramsCount >> 8) & 0xFF; // ParamLen MSB
+    frame[R200_FrameStructure::ParamLengthLSBPos] = paramsCount & 0xFF;        // ParamLen LSB
+    
+    for (size_t i = 0; i < paramsCount; ++i)
+        frame[R200_FrameStructure::ParamPos + i] = params[i];
+    
+    uint16_t checkSum = 0;
+    for (size_t i = 1; i < 5 + paramsCount; ++i)
+        checkSum += frame[i];
+
+    frame[R200_FrameStructure::ParamPos + paramsCount] = checkSum & 0xFF; // only LSB of Checksum
+    frame[R200_FrameStructure::ParamPos + paramsCount + 1] = R200_FrameControl::End;
+
+    uart_write_bytes(R200_UART, frame, sizeof(frame));
 }
 
 // void printHexByte(char* name, uint8_t value){
@@ -157,7 +159,7 @@ void R200::init() {
 //   }
 // }
 
-// // Has any data been received from the reader?
+// Has any data been received from the reader?
 // bool R200::dataIsValid(){
 //   // Serial.println("Checking Data Valid");
 //   // dumpReceiveBufferToSerial();

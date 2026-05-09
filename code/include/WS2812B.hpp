@@ -1,6 +1,8 @@
 #pragma once
 #include "config.hpp"
 
+#include "led_strip.h"
+
 class WS2812B {
     private:
         led_strip_handle_t _led;
