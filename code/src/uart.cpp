@@ -1,6 +1,6 @@
 #include "uart.hpp"
 
-UART::UART(int baud) : uart_config{}, uart_queue{} {
+UART::UART(int baud) : uart_config{} {
     uart_config.baud_rate = baud;
     uart_config.data_bits = UART_DATA_8_BITS;
     uart_config.parity = UART_PARITY_DISABLE;
@@ -11,6 +11,7 @@ UART::UART(int baud) : uart_config{}, uart_queue{} {
 
 void UART::init(
     uart_port_t uart_num,
+    QueueHandle_t& queue,
     int tx_pin, 
     int rx_pin,
     int rx_buff_size, 
@@ -41,7 +42,7 @@ void UART::init(
             rx_buff_size, 
             tx_buff_size, 
             queue_size, 
-            &uart_queue, 0
+            &queue, 0
         )
     );
 }
